@@ -16,6 +16,7 @@ class Config {
         factory.port = 5672
         val connection = factory.newConnection()
         val channel = connection.createChannel()
+
         channel.queueDeclare(Receive.QUEUE_NAME, false, false, false, null)
         return channel
     }
